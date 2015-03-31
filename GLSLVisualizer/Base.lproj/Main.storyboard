@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jgn-vG-zM5">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="fou-uU-MC7">
+            <objects>
+                <navigationController id="Jgn-vG-zM5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tIx-yP-1Bv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eAV-Ek-hvx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YtZ-fl-23b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-122" y="-54"/>
+        </scene>
+        <!--Shader Code View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ShaderCodeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +31,66 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKD-Fq-SeY">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">void main() {
+    gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);
+}</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SKD-Fq-SeY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0aA-En-BtM"/>
+                            <constraint firstAttribute="trailing" secondItem="SKD-Fq-SeY" secondAttribute="trailing" id="3hi-IL-1XA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SKD-Fq-SeY" secondAttribute="bottom" id="4hm-eP-kzG"/>
+                            <constraint firstItem="SKD-Fq-SeY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ffk-t9-KYT"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="RBQ-VT-e2X">
+                        <barButtonItem key="rightBarButtonItem" title="View" id="fKy-b9-hdD">
+                            <connections>
+                                <segue destination="Zic-Fk-keE" kind="presentation" id="GZ9-Pc-TCo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="shaderCodeTextView" destination="SKD-Fq-SeY" id="I8W-Ca-Jm6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="601" y="-54"/>
+        </scene>
+        <!--GLKit View Controller-->
+        <scene sceneID="CeL-8I-JnY">
+            <objects>
+                <glkViewController preferredFramesPerSecond="30" id="Zic-Fk-keE" customClass="GLViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lwG-j4-DBf"/>
+                        <viewControllerLayoutGuide type="bottom" id="X68-NG-SkJ"/>
+                    </layoutGuides>
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="fC9-DL-fDo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outlet property="delegate" destination="Zic-Fk-keE" id="Jdc-J2-NfA"/>
+                            <outletCollection property="gestureRecognizers" destination="Dyu-Y5-wer" appends="YES" id="ebj-Tw-Jfz"/>
+                        </connections>
+                    </glkView>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gFW-jW-SmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="3" id="Dyu-Y5-wer">
+                    <connections>
+                        <action selector="onTripleTapped:" destination="Zic-Fk-keE" id="dWS-Ab-pZX"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1302" y="-54"/>
         </scene>
     </scenes>
 </document>

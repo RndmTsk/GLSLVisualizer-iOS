@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		DEA0123A1AC6002100050C32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA012391AC6002100050C32 /* main.m */; };
 		DEA0123D1AC6002100050C32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0123C1AC6002100050C32 /* AppDelegate.m */; };
-		DEA012401AC6002100050C32 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0123F1AC6002100050C32 /* ViewController.m */; };
+		DEA012401AC6002100050C32 /* ShaderCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0123F1AC6002100050C32 /* ShaderCodeViewController.m */; };
 		DEA012431AC6002100050C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA012411AC6002100050C32 /* Main.storyboard */; };
 		DEA012451AC6002100050C32 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA012441AC6002100050C32 /* Images.xcassets */; };
 		DEA012481AC6002100050C32 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA012461AC6002100050C32 /* LaunchScreen.xib */; };
 		DEA012541AC6002100050C32 /* GLSLVisualizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA012531AC6002100050C32 /* GLSLVisualizerTests.m */; };
+		DEA0125F1AC600D900050C32 /* GLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA0125E1AC600D900050C32 /* GLViewController.m */; };
+		DEA012641AC602BF00050C32 /* ShaderCode.mm in Sources */ = {isa = PBXBuildFile; fileRef = DEA012631AC602BF00050C32 /* ShaderCode.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,18 @@
 		DEA012391AC6002100050C32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DEA0123B1AC6002100050C32 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DEA0123C1AC6002100050C32 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DEA0123E1AC6002100050C32 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DEA0123F1AC6002100050C32 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DEA0123E1AC6002100050C32 /* ShaderCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderCodeViewController.h; sourceTree = "<group>"; };
+		DEA0123F1AC6002100050C32 /* ShaderCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShaderCodeViewController.m; sourceTree = "<group>"; };
 		DEA012421AC6002100050C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEA012441AC6002100050C32 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DEA012471AC6002100050C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DEA0124D1AC6002100050C32 /* GLSLVisualizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLSLVisualizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA012521AC6002100050C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEA012531AC6002100050C32 /* GLSLVisualizerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLSLVisualizerTests.m; sourceTree = "<group>"; };
+		DEA0125D1AC600D900050C32 /* GLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
+		DEA0125E1AC600D900050C32 /* GLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLViewController.m; sourceTree = "<group>"; };
+		DEA012621AC602BF00050C32 /* ShaderCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderCode.h; sourceTree = "<group>"; };
+		DEA012631AC602BF00050C32 /* ShaderCode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShaderCode.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +87,10 @@
 		DEA012361AC6002100050C32 /* GLSLVisualizer */ = {
 			isa = PBXGroup;
 			children = (
+				DEA012611AC602AC00050C32 /* Models */,
+				DEA012601AC600E000050C32 /* View Controllers */,
 				DEA0123B1AC6002100050C32 /* AppDelegate.h */,
 				DEA0123C1AC6002100050C32 /* AppDelegate.m */,
-				DEA0123E1AC6002100050C32 /* ViewController.h */,
-				DEA0123F1AC6002100050C32 /* ViewController.m */,
 				DEA012411AC6002100050C32 /* Main.storyboard */,
 				DEA012441AC6002100050C32 /* Images.xcassets */,
 				DEA012461AC6002100050C32 /* LaunchScreen.xib */,
@@ -117,6 +123,26 @@
 				DEA012521AC6002100050C32 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEA012601AC600E000050C32 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DEA0123E1AC6002100050C32 /* ShaderCodeViewController.h */,
+				DEA0123F1AC6002100050C32 /* ShaderCodeViewController.m */,
+				DEA0125D1AC600D900050C32 /* GLViewController.h */,
+				DEA0125E1AC600D900050C32 /* GLViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DEA012611AC602AC00050C32 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DEA012621AC602BF00050C32 /* ShaderCode.h */,
+				DEA012631AC602BF00050C32 /* ShaderCode.mm */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEA012401AC6002100050C32 /* ViewController.m in Sources */,
+				DEA012641AC602BF00050C32 /* ShaderCode.mm in Sources */,
+				DEA012401AC6002100050C32 /* ShaderCodeViewController.m in Sources */,
 				DEA0123D1AC6002100050C32 /* AppDelegate.m in Sources */,
 				DEA0123A1AC6002100050C32 /* main.m in Sources */,
+				DEA0125F1AC600D900050C32 /* GLViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
