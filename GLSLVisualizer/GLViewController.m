@@ -13,6 +13,7 @@
 
 @interface GLViewController ()
 
+@property (strong, nonatomic) NSDate *dateViewDisplayed;
 @property (strong, nonatomic) EAGLContext *context;
 @property (strong, nonatomic) GLKBaseEffect *effect;
 
@@ -27,6 +28,7 @@
 {
     [super viewDidLoad];
 
+    self.dateViewDisplayed = NSDate.date;
     self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     
@@ -81,7 +83,7 @@
 #pragma mark - GLKView and GLKViewController Delegate methods
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    [ShaderCode.sharedInstance render:self.timeSinceLastUpdate];
+    [ShaderCode.sharedInstance render:-self.dateViewDisplayed.timeIntervalSinceNow];
 }
 
 #pragma mark - IBActions

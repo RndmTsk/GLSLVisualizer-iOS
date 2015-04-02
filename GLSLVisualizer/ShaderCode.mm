@@ -146,9 +146,9 @@ typedef struct
     _aPosition = glGetAttribLocation(_program, "aPosition");
 
     // Set up Uniforms
-    _uResolution = glGetAttribLocation(_program, "u_resolution");
-    _uTime = glGetAttribLocation(_program, "u_time");
-    _uTapLocation = glGetAttribLocation(_program, "u_mouse");
+    _uResolution = glGetUniformLocation(_program, "u_resolution");
+    _uTime = glGetUniformLocation(_program, "u_time");
+    _uTapLocation = glGetUniformLocation(_program, "u_mouse");
 
     // Start using the shader
     glUseProgram(_program);
